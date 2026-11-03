@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça conceitos, componentes e boas práticas do mundo da tecnologia.">
+  <title>Mundo Tech | Tecnologia e Informática</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="inicio">
+    <div class="container header-content">
+      <a class="logo" href="#inicio" aria-label="Mundo Tech - início"><span class="logo-mark">M</span> Mundo<span>Tech</span></a>
+      <nav aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#componentes">Componentes</a></li>
+          <li><a href="#dicas">Dicas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">TECNOLOGIA PARA TODOS</p>
+          <h1 id="hero-title">Explore o universo da <span>tecnologia.</span></h1>
+          <p class="hero-description">Entenda como os computadores funcionam, descubra seus principais componentes e aprenda a cuidar melhor dos seus equipamentos.</p>
+          <a class="button button-primary" href="#sobre">Começar a explorar <span aria-hidden="true">→</span></a>
+        </div>
+        <figure class="hero-image">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Placa de circuito eletrônico com componentes de computador em destaque">
+          <figcaption>Inovação em cada componente.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-light" id="sobre">
+      <div class="container narrow">
+        <p class="eyebrow">UM MUNDO CONECTADO</p>
+        <h2>O que é tecnologia?</h2>
+        <p class="section-intro">Tecnologia é o conjunto de conhecimentos, técnicas e ferramentas criadas para resolver problemas e facilitar atividades do dia a dia. Ela está presente na comunicação, na educação, na saúde, no trabalho e no entretenimento.</p>
+      </div>
+    </section>
+
+    <section class="section" id="componentes">
+      <div class="container">
+        <p class="eyebrow">POR DENTRO DO COMPUTADOR</p>
+        <h2>Componentes essenciais</h2>
+        <p class="section-intro">Cada peça tem uma função importante para o funcionamento do computador.</p>
+        <div class="cards">
+          <article class="info-card">
+            <div class="card-icon" aria-hidden="true">⚙️</div>
+            <h3>Processador (CPU)</h3>
+            <p>Executa instruções e realiza os cálculos necessários para os programas funcionarem.</p>
+          </article>
+          <article class="info-card">
+            <div class="card-icon" aria-hidden="true">🧠</div>
+            <h3>Memória RAM</h3>
+            <p>Armazena temporariamente os dados que estão sendo usados pelo sistema.</p>
+          </article>
+          <article class="info-card">
+            <div class="card-icon" aria-hidden="true">💾</div>
+            <h3>Armazenamento</h3>
+            <p>Guarda arquivos, programas e o sistema operacional, mesmo com o computador desligado.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tip-section" id="dicas">
+      <div class="container tip-content">
+        <div>
+          <p class="eyebrow">DICA RÁPIDA</p>
+          <h2>Cuide bem do seu equipamento.</h2>
+          <p>Mantenha o sistema atualizado, faça cópias de segurança dos arquivos importantes e mantenha as entradas de ventilação desobstruídas.</p>
+          <button class="button button-light" id="tip-button" type="button" aria-expanded="false" aria-controls="extra-tip">Mostrar mais uma dica</button>
+          <p class="extra-tip" id="extra-tip" hidden>Use senhas fortes e diferentes em cada serviço e ative a autenticação em duas etapas sempre que possível.</p>
+        </div>
+        <div class="tip-symbol" aria-hidden="true">⌘</div>
+      </div>
+    </section>
+
+    <section class="section section-light links-section">
+      <div class="container">
+        <p class="eyebrow">CONTINUE APRENDENDO</p>
+        <h2>Fontes para estudar</h2>
+        <ul class="resource-list">
+          <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer">Documentação HTML da MDN <span aria-hidden="true">↗</span></a></li>
+          <li><a href="https://www.w3.org/standards/" target="_blank" rel="noopener noreferrer">Padrões da Web - W3C <span aria-hidden="true">↗</span></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© <span id="current-year">2026</span> Mundo Tech. Projeto educacional.</p>
+      <a href="#inicio">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+</body>
+</html>

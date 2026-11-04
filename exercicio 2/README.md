@@ -1,91 +1,80 @@
-# Exercício 2 — `div` e HTML semântico
+# Exercício 2 — HTML semântico, formulários e table-based layout
 
-## Objetivo
+Este projeto apresenta uma página sobre Tecnologia e Informática e um formulário de contato. A atividade também demonstra a diferença entre layouts feitos com tabelas e a estrutura semântica moderna do HTML.
 
-Entender a diferença entre blocos genéricos, criados com a tag `<div>`, e elementos semânticos do HTML5, que indicam a função de cada parte da página.
+## Parte 5 — Adaptação para table-based layout
 
-## 1. Qual é a diferença entre `div` e HTML semântico?
+Os arquivos `index.html` e `formulario.html` foram adaptados para demonstrar o **table-based layout**. As tabelas (`<table>`, `<tr>` e `<td>`) foram usadas para organizar as regiões da página, como cabeçalho, navegação, conteúdo e rodapé. No formulário, uma tabela também organiza os campos.
 
-A tag `<div>` é um contêiner genérico. Ela agrupa outros elementos para facilitar a organização do conteúdo e a aplicação de CSS ou JavaScript. Sozinha, não informa o que aquele bloco representa.
+> Esta adaptação é apenas didática. Em sites atuais, tabelas devem ser reservadas principalmente para apresentar dados tabulares, não para montar o layout inteiro.
 
-O HTML semântico utiliza elementos que descrevem o significado e a finalidade do conteúdo. Por exemplo:
+## Por que o table-based layout é uma técnica antiga?
 
-- `<header>`: cabeçalho de uma página ou seção.
-- `<nav>`: área de navegação com links.
-- `<main>`: conteúdo principal da página.
-- `<section>`: seção temática de conteúdo.
-- `<article>`: conteúdo independente, como uma notícia ou publicação.
-- `<aside>`: conteúdo complementar.
-- `<footer>`: rodapé da página ou seção.
+Antigamente, antes da evolução do CSS, era comum usar tabelas para posicionar elementos e dividir a página em colunas e linhas. Com o desenvolvimento de recursos como Flexbox e CSS Grid, tornou-se possível criar layouts flexíveis sem usar tabelas para controlar a apresentação.
 
-**Resumo:** `div` organiza elementos sem indicar seu significado; as tags semânticas organizam e também comunicam a função do conteúdo ao navegador, aos mecanismos de busca e às tecnologias assistivas.
+As principais desvantagens do uso de tabelas para layout são:
 
-## 2. Exemplo prático com blocos genéricos (`div`)
+- Mistura a estrutura do conteúdo com a apresentação visual.
+- Deixa o HTML mais extenso e difícil de manter.
+- Torna adaptações para celulares e diferentes tamanhos de tela mais trabalhosas.
+- Pode confundir tecnologias assistivas quando as tabelas não são interpretadas como simples estruturas de apresentação.
+- Uma alteração na organização das células pode exigir mudanças em várias linhas e colunas.
 
-Neste exemplo, todos os blocos são feitos com `div`. É possível estilizar a página, mas a estrutura não deixa explícita a função de cada área.
+## Dificuldades encontradas na adaptação
 
-```html
-<div class="cabecalho">
-  <h1>Meu site de tecnologia</h1>
-</div>
+Durante a adaptação, as principais dificuldades foram:
 
-<div class="menu">
-  <a href="#inicio">Início</a>
-  <a href="#noticias">Notícias</a>
-</div>
+1. Reorganizar cabeçalho, menu, conteúdo e rodapé em linhas e células de tabela.
+2. Manter os espaçamentos e o alinhamento visual que antes eram feitos com CSS e elementos semânticos.
+3. Adaptar a tabela para telas menores, pois as células não se reorganizam de forma tão simples quanto elementos em Flexbox ou Grid.
+4. Organizar os campos do formulário em linhas sem prejudicar a associação entre cada `label` e seu campo.
 
-<div class="conteudo">
-  <div class="noticia">
-    <h2>Novidades da tecnologia</h2>
-    <p>Confira as principais novidades do mundo digital.</p>
-  </div>
-</div>
+A utilização de tabelas tornou o código mais repetitivo e menos simples de ajustar. Por isso, esse formato é útil para compreender a evolução das técnicas de layout, mas não é a melhor escolha para projetos atuais.
 
-<div class="rodape">
-  <p>Todos os direitos reservados.</p>
-</div>
-```
+## Comparação: table-based layout x HTML semântico moderno
 
-## 3. Exemplo prático com blocos semânticos
+| Critério | Table-based layout | Estrutura semântica moderna |
+|---|---|---|
+| Organização | Usa tabelas, linhas e células para posicionar áreas. | Usa `header`, `nav`, `main`, `section` e `footer`. |
+| Finalidade | Tabelas são usadas para apresentação visual. | Cada elemento descreve a função do conteúdo. |
+| Responsividade | Pode exigir regras extras e reorganização das células. | Flexbox e CSS Grid facilitam layouts adaptáveis. |
+| Manutenção | HTML tende a ficar maior e mais complexo. | Estrutura geralmente mais clara e fácil de manter. |
+| Acessibilidade | Tabelas de layout podem adicionar ruído semântico. | Regiões semânticas ajudam a navegação por tecnologias assistivas. |
+| Uso recomendado | Apenas para demonstração histórica ou dados tabulares. | Recomendado para páginas e aplicações atuais. |
 
-Agora, os elementos indicam a finalidade de cada parte da página. A organização fica mais clara para quem desenvolve e para recursos que interpretam a estrutura do documento.
+## Exemplo de estrutura semântica moderna
 
 ```html
 <header>
-  <h1>Meu site de tecnologia</h1>
+  <h1>Tecnologia e Informática</h1>
 </header>
 
 <nav aria-label="Navegação principal">
   <a href="#inicio">Início</a>
-  <a href="#noticias">Notícias</a>
+  <a href="#contato">Contato</a>
 </nav>
 
-<main id="inicio">
-  <section id="noticias">
-    <article>
-      <h2>Novidades da tecnologia</h2>
-      <p>Confira as principais novidades do mundo digital.</p>
-    </article>
+<main>
+  <section id="inicio">
+    <h2>Bem-vindo!</h2>
+    <p>Conteúdo principal da página.</p>
   </section>
 </main>
 
 <footer>
-  <p>Todos os direitos reservados.</p>
+  <p>Autoria: Vitor Alves</p>
 </footer>
 ```
 
-## 4. Quando usar cada um?
+Em um projeto moderno, o posicionamento visual dessa estrutura pode ser feito com CSS Grid ou Flexbox, sem usar tabelas para montar a página.
 
-- Use elementos semânticos quando existir uma tag que represente corretamente a função do conteúdo.
-- Use `<div>` quando precisar apenas agrupar elementos para estilização ou organização e não houver um elemento semântico mais adequado.
-- Não escolha uma tag semântica apenas pela aparência: a escolha deve representar o significado do conteúdo.
+## Conclusão
 
-## 5. Conclusão
+O table-based layout foi importante na história do desenvolvimento web, mas hoje é considerado ultrapassado para organizar páginas. A adaptação mostrou que tabelas deixam a estrutura mais rígida e trabalhosa. A combinação de HTML semântico com CSS moderno oferece melhor organização, acessibilidade, manutenção e responsividade.
 
-O HTML semântico torna o código mais organizado e compreensível, além de ajudar na acessibilidade e na interpretação da estrutura da página. A tag `<div>` continua sendo útil, mas deve ser usada como contêiner genérico quando não houver um elemento mais significativo.
-
-## 6. Referências
+## Referências
 
 - [MDN — Elementos HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element)
-- [MDN — Elementos semânticos](https://developer.mozilla.org/pt-BR/docs/Glossary/Semantics#semântica_em_html)
+- [MDN — CSS Grid Layout](https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_grid_layout)
+- [MDN — Flexbox](https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_flexible_box_layout)
 - [W3C — HTML](https://www.w3.org/html/)

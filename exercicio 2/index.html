@@ -46,8 +46,15 @@
             background-color: #14213d;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 25px 20px;
         }
+        footer a {
+            color: #ffd166;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        footer a:hover { text-decoration: underline; }
+        .footer-links { margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -81,13 +88,18 @@
 
         <section id="contato">
             <h2>Contato</h2>
-            <p>Obrigado por visitar nossa página!</p>
+            <p>Obrigado por visitar nossa página! Para entrar em contato com o autor, acesse seu perfil no GitHub.</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 - Tecnologia e Informática</p>
-        <p>Desenvolvido para atividade de HTML</p>
+        <p><strong>Tecnologia e Informática</strong></p>
+        <p>&copy; 2026 - Todos os direitos reservados.</p>
+        <p>Autoria: Vitor Alves</p>
+        <p>Contato: <a href="https://github.com/vitopimentas8-prog" target="_blank" rel="noopener noreferrer">Perfil do autor no GitHub</a></p>
+        <div class="footer-links">
+            <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer">Apoio: Documentação HTML (MDN)</a>
+        </div>
     </footer>
 </body>
 </html>

@@ -3,105 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnologia e Informática</title>
+    <title>Tecnologia e Informática — Layout com Tabelas</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-            color: #222;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #14213d;
-            color: white;
-            text-align: center;
-            padding: 30px;
-        }
-        nav {
-            background-color: #0077b6;
-            padding: 15px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        nav a:hover { color: #ffd166; }
-        main {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 20px;
-        }
-        section {
-            background-color: white;
-            margin-bottom: 20px;
-            padding: 25px;
-            border-radius: 10px;
-        }
-        h2 { color: #0077b6; margin-bottom: 10px; }
+        body { margin: 0; font-family: Arial, sans-serif; background: #f0f2f5; color: #222; line-height: 1.6; }
+        .layout { width: 100%; border-collapse: collapse; }
+        .cabecalho { background: #14213d; color: white; text-align: center; padding: 28px; }
+        .menu { background: #0077b6; text-align: center; padding: 14px; }
+        .menu a { color: white; text-decoration: none; font-weight: bold; margin: 0 14px; }
+        .menu a:hover { color: #ffd166; }
+        .conteudo { padding: 18px max(5%, 20px); }
+        .bloco { background: white; border-radius: 8px; padding: 20px; margin: 12px 0; }
+        h2 { color: #0077b6; margin-top: 0; }
         .link-formulario { color: #005f91; font-weight: bold; }
-        footer {
-            background-color: #14213d;
-            color: white;
-            text-align: center;
-            padding: 25px 20px;
+        .rodape { background: #14213d; color: white; text-align: center; padding: 22px; }
+        .rodape a { color: #ffd166; }
+        @media (max-width: 600px) {
+            .menu a { display: inline-block; margin: 5px 8px; }
+            .conteudo { padding: 12px; }
         }
-        footer a {
-            color: #ffd166;
-            text-decoration: none;
-            margin: 0 8px;
-        }
-        footer a:hover { text-decoration: underline; }
-        .footer-links { margin-top: 10px; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Tecnologia e Informática</h1>
-        <p>Conhecendo o mundo da tecnologia</p>
-    </header>
-
-    <nav aria-label="Navegação principal">
-        <a href="#inicio">Início</a>
-        <a href="#computadores">Computadores</a>
-        <a href="#internet">Internet</a>
-        <a href="#contato">Contato</a>
-    </nav>
-
-    <main>
-        <section id="inicio">
-            <h2>Bem-vindo!</h2>
-            <p>A tecnologia está presente em nosso cotidiano, facilitando a comunicação, os estudos e o trabalho. Ela permite criar soluções e conectar pessoas.</p>
-        </section>
-
-        <section id="computadores">
-            <h2>Computadores</h2>
-            <p>Os computadores são equipamentos eletrônicos capazes de processar informações, executar programas e armazenar dados.</p>
-        </section>
-
-        <section id="internet">
-            <h2>Internet</h2>
-            <p>A internet conecta pessoas e dispositivos ao redor do mundo, permitindo acessar informações, estudar e compartilhar conteúdos.</p>
-        </section>
-
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>Obrigado por visitar nossa página! Se quiser enviar uma mensagem, acesse nosso formulário:</p>
-            <p><a class="link-formulario" href="formulario.html">Abrir formulário de contato</a></p>
-        </section>
-    </main>
-
-    <footer>
-        <p><strong>Tecnologia e Informática</strong></p>
-        <p>&copy; 2026 - Todos os direitos reservados.</p>
-        <p>Autoria: Vitor Alves</p>
-        <p>Contato: <a href="https://github.com/vitopimentas8-prog" target="_blank" rel="noopener noreferrer">Perfil do autor no GitHub</a></p>
-        <div class="footer-links">
-            <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer">Apoio: Documentação HTML (MDN)</a>
-        </div>
-    </footer>
+    <!-- Exemplo didático de table-based layout: tabelas organizam as áreas da página. -->
+    <table class="layout" role="presentation">
+        <tr>
+            <td class="cabecalho">
+                <h1>Tecnologia e Informática</h1>
+                <p>Conhecendo o mundo da tecnologia</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="menu">
+                <nav aria-label="Navegação principal">
+                    <a href="#inicio">Início</a>
+                    <a href="#computadores">Computadores</a>
+                    <a href="#internet">Internet</a>
+                    <a href="#contato">Contato</a>
+                    <a href="formulario.html">Formulário</a>
+                </nav>
+            </td>
+        </tr>
+        <tr>
+            <td class="conteudo">
+                <table class="layout" role="presentation">
+                    <tr><td class="bloco" id="inicio">
+                        <h2>Bem-vindo!</h2>
+                        <p>A tecnologia está presente em nosso cotidiano, facilitando a comunicação, os estudos e o trabalho. Ela permite criar soluções e conectar pessoas.</p>
+                    </td></tr>
+                    <tr><td class="bloco" id="computadores">
+                        <h2>Computadores</h2>
+                        <p>Os computadores são equipamentos eletrônicos capazes de processar informações, executar programas e armazenar dados.</p>
+                    </td></tr>
+                    <tr><td class="bloco" id="internet">
+                        <h2>Internet</h2>
+                        <p>A internet conecta pessoas e dispositivos ao redor do mundo, permitindo acessar informações, estudar e compartilhar conteúdos.</p>
+                    </td></tr>
+                    <tr><td class="bloco" id="contato">
+                        <h2>Contato</h2>
+                        <p>Se quiser enviar uma mensagem, acesse o <a class="link-formulario" href="formulario.html">formulário de contato</a>.</p>
+                    </td></tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="rodape">
+                <p><strong>Tecnologia e Informática</strong></p>
+                <p>&copy; 2026 - Todos os direitos reservados.</p>
+                <p>Autoria: Vitor Alves</p>
+                <p>Contato: <a href="https://github.com/vitopimentas8-prog" target="_blank" rel="noopener noreferrer">Perfil do autor no GitHub</a></p>
+                <p><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer">Apoio: Documentação HTML (MDN)</a></p>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

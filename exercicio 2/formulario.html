@@ -3,107 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Contato</title>
+    <title>Formulário de Contato — Layout com Tabelas</title>
     <style>
-        * { box-sizing: border-box; }
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f0f2f5;
-            color: #222;
-            line-height: 1.6;
-        }
-        header {
-            background: #14213d;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-        main {
-            max-width: 650px;
-            margin: 30px auto;
-            padding: 25px;
-            background: white;
-            border-radius: 10px;
-        }
+        body { margin: 0; font-family: Arial, sans-serif; background: #f0f2f5; color: #222; line-height: 1.6; }
+        .layout { width: 100%; border-collapse: collapse; }
+        .cabecalho, .rodape { background: #14213d; color: white; text-align: center; padding: 22px; }
+        .conteudo { width: 100%; max-width: 680px; margin: auto; padding: 22px; background: white; }
         h2 { color: #0077b6; }
-        .campo { margin-bottom: 16px; }
-        label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: bold;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 11px;
-            border: 1px solid #aaa;
-            border-radius: 5px;
-            font: inherit;
-        }
-        textarea { resize: vertical; }
-        button {
-            background: #0077b6;
-            color: white;
-            border: 0;
-            padding: 12px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        button:hover { background: #005f91; }
-        .voltar { display: inline-block; margin-top: 18px; color: #005f91; }
-        footer {
-            background: #14213d;
-            color: white;
-            text-align: center;
-            padding: 18px;
-            margin-top: 30px;
-        }
+        .campos { width: 100%; border-collapse: separate; border-spacing: 0 12px; }
+        .campos td { vertical-align: top; }
+        .campos label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input, select, textarea { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #aaa; border-radius: 5px; font: inherit; }
+        button { background: #0077b6; color: white; border: 0; border-radius: 5px; padding: 11px 18px; cursor: pointer; }
+        .voltar { display: inline-block; margin-top: 16px; color: #005f91; }
+        @media (max-width: 520px) { .campos td { display: block; width: 100%; } }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Formulário de Contato</h1>
-        <p>Envie sua dúvida ou mensagem</p>
-    </header>
-
-    <main>
-        <h2>Entre em contato</h2>
-        <form action="#" method="get">
-            <div class="campo">
-                <label for="nome">Nome completo:</label>
-                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-            </div>
-
-            <div class="campo">
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
-            </div>
-
-            <div class="campo">
-                <label for="assunto">Assunto:</label>
-                <select id="assunto" name="assunto" required>
-                    <option value="">Selecione um assunto</option>
-                    <option value="duvida">Dúvida</option>
-                    <option value="sugestao">Sugestão</option>
-                    <option value="suporte">Suporte técnico</option>
-                    <option value="outro">Outro</option>
-                </select>
-            </div>
-
-            <div class="campo">
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem" required></textarea>
-            </div>
-
-            <button type="submit">Enviar mensagem</button>
-        </form>
-
-        <a class="voltar" href="index.html">Voltar para a página inicial</a>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 - Tecnologia e Informática | Formulário de contato</p>
-    </footer>
+    <table class="layout" role="presentation">
+        <tr><td class="cabecalho">
+            <h1>Formulário de Contato</h1>
+            <p>Envie sua dúvida ou mensagem</p>
+        </td></tr>
+        <tr><td>
+            <table class="conteudo" role="presentation">
+                <tr><td>
+                    <h2>Entre em contato</h2>
+                    <form action="#" method="get">
+                        <table class="campos" role="presentation">
+                            <tr><td>
+                                <label for="nome">Nome completo:</label>
+                                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                            </td></tr>
+                            <tr><td>
+                                <label for="email">E-mail:</label>
+                                <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+                            </td></tr>
+                            <tr><td>
+                                <label for="assunto">Assunto:</label>
+                                <select id="assunto" name="assunto" required>
+                                    <option value="">Selecione um assunto</option>
+                                    <option value="duvida">Dúvida</option>
+                                    <option value="sugestao">Sugestão</option>
+                                    <option value="suporte">Suporte técnico</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </td></tr>
+                            <tr><td>
+                                <label for="mensagem">Mensagem:</label>
+                                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem" required></textarea>
+                            </td></tr>
+                            <tr><td><button type="submit">Enviar mensagem</button></td></tr>
+                        </table>
+                    </form>
+                    <a class="voltar" href="index.html">Voltar para a página inicial</a>
+                </td></tr>
+            </table>
+        </td></tr>
+        <tr><td class="rodape"><p>&copy; 2026 - Tecnologia e Informática | Formulário de contato</p></td></tr>
+    </table>
 </body>
 </html>
